@@ -71,7 +71,27 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll().stream().filter(user -> user.getSalary() > 1000 && user.getSalary() < 2000).collect(Collectors.toList());
     }
 
-    // Question to be solved: What is a more ideal way of retrieving above values? SQL
+    @Override
+    public List<User> allUsersEarningAboveAverage() {
+        return null;
+    }
+
+    @Override
+    public List<User> allUsersEarningLessAverage() {
+        int x = 2000;
+        int y = 3000;
+        List<User> userList = userRepository.findAll();
+        //userList.forEach(user -> System.out.println(user.getSalary());
+        return (List<User>) userList.stream().filter(user -> user.getSalary() < y && user.getSalary() < x).mapToInt(user -> user.getSalary());
+    }
+
+    /*@Override
+    public List<User> allUserEarningAverage() {
+        userRepository.findAll().stream().forEach();
+        userRepository.findAll().stream().filter;
+        return null;
+    }*/
+    // Question to be solved: What is a more ideal way of retrieving above values? Mit einer Datenbank abfrage ist es am idealsten.
 
 
 }

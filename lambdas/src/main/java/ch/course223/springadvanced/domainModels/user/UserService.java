@@ -10,4 +10,6 @@ public interface UserService {
     public List<User> allUsersEarningMoreThan(int x);
     public List<User> allUsersEarningLessThan(int x);
     public List<User> allUsersEarningBetween(int x, int y);
+    public List<User> allUsersEarningAboveAverage();
+    public List<User> allUsersEarningLessAverage();
 }
